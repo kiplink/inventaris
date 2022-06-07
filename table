@@ -1,0 +1,30 @@
+JENIS BARANG
+- idjenisbarang
+- jenis_barang
+
+KONDISI
+- idkondisi
+- kondisi
+
+BARANG
+- idbarang
+- namabarang
+- jenisbarang
+- merk
+- type
+- tahun pengadaan
+- idkondisi
+
+DETAIL BARANG
+
+jenis maintenance
+- idjenismaintenance
+- jenismaintenance
+
+MAINTENANCE
+- idmaintenance
+- idbarang
+- tglmaintenance
+- idjenismaintenance
+
+DETAIL MAINTENANCE

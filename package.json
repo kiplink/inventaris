@@ -1,0 +1,29 @@
+{
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "fastify": "^3.29.0",
+    "fastify-swagger": "^5.2.0",
+    "knex": "^2.1.0",
+    "pg": "^8.7.3",
+    "supertest": "^6.2.3"
+  },
+  "name": "inventaris",
+  "version": "1.0.0",
+  "description": "belajar",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "author": "kipz",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0"
+  }
+}
