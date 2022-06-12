@@ -1,10 +1,14 @@
 const fastify = require(`fastify`)({ logger: true })
+const swagger = require('./src/config/swagger')
+fastify.register(require('fastify-swagger'), swagger.options)
+require(`dotenv`).config()
 
 const createServer = async (options) => {
   try {
     // routes
     require(`./src/application/rest/routes`)(fastify)
-
+    await fastify.ready()
+    fastify.swagger()
     await fastify.listen(3000, `0.0.0.0`)
     fastify.log.info(`Server listening on ${fastify.server.address().port}`)
   } catch (err) {
@@ -12,7 +16,6 @@ const createServer = async (options) => {
     process.exit(1)
   }
 }
-
 module.exports = {
   createServer,
 }

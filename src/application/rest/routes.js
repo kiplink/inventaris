@@ -1,11 +1,12 @@
 const UserController = require('./controllers/user.controller')
 const JenisBarangController = require('./controllers/jenis-barang.controller')
+const userDoc = require('../rest/documentation/users')
 
 module.exports = async (fastify) => {
   fastify.get('/users', UserController.findAll)
   fastify.get('/users/:id', UserController.findOne)
-  fastify.post('/register', UserController.create)
-  fastify.post('/login', UserController.login)
+  fastify.post('/register', userDoc.register, UserController.create)
+  fastify.post('/login', userDoc.login, UserController.login)
   fastify.patch('/users/:id', UserController.update)
   fastify.delete('/users/:id', UserController.remove)
 

@@ -22,7 +22,10 @@ class UserService {
       }
       return await UserRepository.create(requestBody)
     } catch (error) {
-      console.log(error)
+      const err = new Error()
+      err.statusCode = 405
+      err.message = 'jancok ngoding ae susah'
+      throw err
     }
   }
   async login(data) {
